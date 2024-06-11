@@ -13,7 +13,7 @@ const {
   logOut,
   loginPage,
 } = require("../controllers/controller");
-const { isAuth, authentication } = require("../middleware/middleware");
+const { isAuth} = require("../middleware/middleware");
 
 const router = Router();
 
@@ -24,7 +24,7 @@ router.post("/sign", addUser);
 router.get("/signPage", signPage);
 router.get("/logOut",logOut);
 router.get("/formPage", formPage);
-router.post("/addBlog", Upload, authentication, addBlog);
+router.post("/addBlog", Upload, addBlog);
 router.get("/delete", deleteBlog);
 router.get("/editPage", editPage);
 router.post("/editData", Upload, update);
