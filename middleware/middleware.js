@@ -1,12 +1,12 @@
-const authentication = (req, res, next) => {
-  const { name, description } = req.body;
-  if (name && description) {
-    next();
-  } else {
-    console.log("invalid data");
-    res.redirect("/");
-  }
-};
+// const authentication = (req, res, next) => {
+//   const { name, description } = req.body;
+//   if (name && description) {
+//     next();
+//   } else {
+//     console.log("invalid data");
+//     res.redirect("/");
+//   }
+// };
 
 const isAuth = (req, res, next) => {
   let { userName } = req.cookies;
@@ -17,4 +17,4 @@ const isAuth = (req, res, next) => {
   }
 };
 
-module.exports = { authentication, isAuth };
+module.exports = { isAuth };
